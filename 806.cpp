@@ -1,7 +1,7 @@
 /**
- * AOAPC II Exercise 6-8 Spatial Structures
+ * Spatial Structures
  * ICPC WF 1998
- * 83 AC;
+ * AOAPC II Exercise 6-8
  */
 #include <bits/stdc++.h>
 using namespace std;
