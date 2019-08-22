@@ -9,3 +9,4 @@ used to increase development speed.
 Problems that appear in examples of Liu's book got inspirations from the book and [his solutions](https://github.com/aoapc-book/aoapc-bac2nd).
 Many problems that appear in the exercises were inspired by the accompany solutions manual by Feng Chen (《算法竞赛入门经典习题与解答》，陈锋)
 and [his code](https://github.com/sukhoeing/aoapc-bac2nd-keys). Thanks!
+- Includes a PowerShell script `get.ps1` to batch download problem statements.
