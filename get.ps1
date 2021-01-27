@@ -26,7 +26,7 @@ param (
 foreach ($id in $ProblemIDs) {
     Write-Output "Downloading $id.pdf ..."
     $problemFolder = $id.Substring(0, $id.Length - 2)
-    Invoke-WebRequest "https://uva.onlinejudge.org/external/$problemFolder/$id.pdf" -OutFile "$Output/$id.pdf"
+    Invoke-WebRequest "https://uva.onlinejudge.org/external/$problemFolder/$id.pdf" -OutFile "$Output/$id.pdf" -SkipCertificateCheck
     if ($View) {
         Start-Process "$Output/$id.pdf"
     }
