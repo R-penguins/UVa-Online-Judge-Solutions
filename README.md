@@ -1,4 +1,5 @@
 # UVa Online Judge Solutions
+
 My solutions to the UVa Online Judge problems.
 
 - The program names match the corresponding problem number in the [UVa Online Judge](https://onlinejudge.org). All solutions have been accepted by the online judge.
@@ -9,4 +10,4 @@ used to increase development speed.
 Problems that appear in examples of Liu's book got inspirations from the book and [his solutions](https://github.com/aoapc-book/aoapc-bac2nd).
 Many problems that appear in the exercises were inspired by the accompany solutions manual by Feng Chen (《算法竞赛入门经典习题与解答》，陈锋)
 and [his code](https://github.com/sukhoeing/aoapc-bac2nd-keys). Thanks!
-- Includes a PowerShell script `get.ps1` to batch download problem statements, and `run.ps1` to run the compiled program with file I/O.
+- Includes a PowerShell script `get.ps1` to batch download problem statements, and `run.ps1` to run the compiled program with file I/O. Requires PowerShell 7 or later.

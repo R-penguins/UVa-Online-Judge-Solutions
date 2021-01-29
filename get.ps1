@@ -23,6 +23,9 @@ param (
     [switch] $View,
     [string] $Output = "./pdf"
 )
+if (! (Test-Path $Output)) {
+    mkdir $Output
+}
 foreach ($id in $ProblemIDs) {
     Write-Output "Downloading $id.pdf ..."
     $problemFolder = $id.Substring(0, $id.Length - 2)
