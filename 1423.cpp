@@ -12,7 +12,7 @@ using PII = pair<int, int>;
 using PDD = pair<double, double>;
 using PDI = pair<double, int>;
 constexpr double pi = 3.1415926535897932385;
-constexpr double EPS = 1e-3;
+constexpr double EPS = 1e-12;
 
 struct Edge
 {
@@ -56,39 +56,13 @@ int main()
 {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-  cout << fixed << setprecision(2);
 
-  int N;
-  cin >> N;
-  for (int x = 1; x <= N; ++x)
+  int T;
+  cin >> T;
+  while (T--)
   {
-    int n, m;
-    cin >> n >> m;
-    vector<vector<Edge>> adj(n);
-    double l = 0, r = 0;
-    for (int i = 0; i < m; ++i)
-    {
-      int a, b, c;
-      cin >> a >> b >> c;
-      adj[--a].emplace_back(--b, c);
-      if (c > r)
-        r = c;
-    }
-    cout << "Case #" << x << ": ";
-    if (!bellman_ford(adj, r + 1))
-    {
-      cout << "No cycle found.\n";
-      continue;
-    }
-    while (r - l > EPS)
-    {
-      double mid = (r - l) / 2 + l;
-      if (bellman_ford(adj, mid))
-        r = mid;
-      else
-        l = mid;
-    }
-    cout << l << '\n';
+    int n;
+    cin >> n;
   }
   return 0;
 }
