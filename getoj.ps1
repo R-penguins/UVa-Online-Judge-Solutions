@@ -1,6 +1,6 @@
 <#
 .Synopsis
-Downloads problem statements from the UVa Online Judge
+Downloads problem statements from Online Judge
 .Parameter ProblemIDs
 Problem IDs to download seperated by commas
 .Parameter View
@@ -21,7 +21,8 @@ param (
     [Parameter(Mandatory = $true)]
     [string[]] $ProblemIDs,
     [switch] $View,
-    [string] $Output = "./pdf"
+    [switch] $Print,
+    [string] $Output = "./oj-pdf"
 )
 if (! (Test-Path $Output)) {
     mkdir $Output
@@ -29,8 +30,11 @@ if (! (Test-Path $Output)) {
 foreach ($id in $ProblemIDs) {
     Write-Output "Downloading $id.pdf ..."
     $problemFolder = $id.Substring(0, $id.Length - 2)
-    Invoke-WebRequest "https://uva.onlinejudge.org/external/$problemFolder/$id.pdf" -OutFile "$Output/$id.pdf" -SkipCertificateCheck
+    Invoke-WebRequest "https://onlinejudge.org/external/$problemFolder/$id.pdf" -OutFile "$Output/$id.pdf"
     if ($View) {
         Start-Process "$Output/$id.pdf"
+    }
+    if ($Print) {
+        Start-Process "$Output/$id.pdf" -Verb Print
     }
 }
