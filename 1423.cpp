@@ -26,7 +26,7 @@ bool bellman_ford(vector<vector<Edge>>& adj, double test)
   int n = adj.size();
   vector<double> dist(n, 0);
   vector<bool> in_queue(n, true);
-  vector<int> cnt(n, 1);
+  vector<int> bit(n, 1);
 
   queue<int> q;
   for (int i = 0; i < n; ++i)
@@ -42,7 +42,7 @@ bool bellman_ford(vector<vector<Edge>>& adj, double test)
         dist[edge.to] = dist[cur] + edge.weight - test;
         if (!in_queue[edge.to])
         {
-          if (++cnt[edge.to] > n)
+          if (++bit[edge.to] > n)
             return true;
           q.push(edge.to);
           in_queue[edge.to] = true;
